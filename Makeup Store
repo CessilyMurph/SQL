@@ -1,0 +1,24 @@
+CREATE TABLE FOUNDATION (id integer primary key, name text, color text, product text, price integer);
+
+INSERT INTO FOUNDATION VALUES (01, "Latte", "medium", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (02, "Cappacino", "medium", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (03, "Hazelnut", "medium", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (04, "Almond", "medium", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (05, "Nutmeg", "medium", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (06, "Tiramisu", "deep", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (07, "Coffee", "deep", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (08, "Pistachio", "deep", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (09, "Cocoa", "deep", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (10, "Flan", "dark", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (11, "Cinnamon", "dark", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (12, "Godiva", "dark", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (13, "Lindt", "dark", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (14, "Cadbury", "dark", "face", 30.00);
+INSERT INTO FOUNDATION VALUES (15, "Twix", "dark", "face", 30.00);
+
+#Show the color category and the sum price of all colors in that catergory #  
+SELECT COLOR, SUM(PRICE) from FOUNDATION
+GROUP BY COLOR 
+
+#Show the color category and number of products in each color category# 
+SELECT color, COUNT(COLOR) as number_of_products FROM FOUNDATION GROUP BY COLOR;
