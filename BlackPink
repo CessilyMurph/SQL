@@ -1,0 +1,54 @@
+#In this project I created my own table with some small set of “famous people” then made more tables with additional facts they do and joined those to create nice human readable lists#
+
+#This set used the members of a popular Kpop Group BlackPink #
+
+CREATE TABLE BLACKPINK (id INTEGER PRIMARY KEY,
+    first_name TEXT,
+    last_name TEXT,
+    sign TEXT,
+    height INTEGER,
+    Weight INTEGER);
+    
+    INSERT INTO BLACKPINK (first_name, last_name, sign, height, weight)
+    VALUES ("Jisoo", "Kim", "Capricorn", 162, 44);
+        INSERT INTO BLACKPINK (first_name, last_name, sign, height, weight)
+    VALUES ("Jennie", "Kim", "Capricorn", 163, 45);
+        INSERT INTO BLACKPINK (first_name, last_name, sign, height, weight)
+    VALUES ("Chaeyoung", "Park", "Aquarius", 169, 44);
+        INSERT INTO BLACKPINK (first_name, last_name, sign, height, weight)
+    VALUES ("Lalisa", "Manoban", "Aries", 166, 45);
+        
+        CREATE TABLE Birth (id INTEGER PRIMARY KEY,
+    birthplace TEXT,
+    position TEXT,
+    MBTI TEXT);INSERT INTO Birth (birthplace, position, MBTI)
+        VALUES ("Gunpo", "Lead Vocalist", "INFJ");
+        INSERT INTO Birth (birthplace, position, MBTI)
+        VALUES ("Cheongdam-dong", "Lead Vocalist", "INFP");
+        INSERT INTO Birth (birthplace, position, MBTI)
+        VALUES ("Auckland", "Main Vocalist", "ENFP");
+        INSERT INTO Birth (birthplace, position, MBTI)
+        VALUES ("Buriram", "Lead Rapper", "ISFP");
+        
+CREATE TABLE speech (id INTEGER PRIMARY KEY,
+    first_language TEXT,
+    second_language TEXT,
+    third_language TEXT);
+
+INSERT INTO speech (first_language, second_language, third_language)
+VALUES ("Korean", "Japanese", "Chinese");
+INSERT INTO speech (first_language, second_language, third_language)
+VALUES ("Korean", "Japanese", "English");
+INSERT INTO speech (first_language, second_language, third_language)
+VALUES ("Korean", "English", "Japanese");
+INSERT INTO speech (first_language, second_language, third_language)
+VALUES ("Korean", "Thai", "English");
+
+#What is the second language of each member of BlackPink ? #
+SELECT first_name, second_language FROM BLACKPINK
+JOIN speech ON speech.id = BLACKPINK.id;
+
+#What is the birthplace of each member of BlackPink ? #
+SELECT first_name, birthplace FROM BLACKPINK
+join BIRTH ON birth.id = BLACKPINK.id;
+
